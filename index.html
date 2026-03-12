@@ -3,134 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infra Solutions</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Swiper CSS para slider -->
+    <title>Infra Solutions | Soluciones TI y Redes</title>
+
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Swiper (slider) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-    <!-- AOS para animaciones -->
+
+    <!-- AOS (animación scroll) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
 </head>
 <body>
-    <!-- Header / Navbar -->
-    <header class="header">
-        <div class="container flex-between">
-            <h1 class="logo">Infra Solutions</h1>
-            <nav>
-                <a href="#productos">Productos</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
+
+<!-- ======= HEADER / NAV ======= -->
+<header class="header">
+    <div class="container flex-between">
+        <h1 class="logo">Infra Solutions</h1>
+        <nav>
+            <a href="#hero">Inicio</a>
+            <a href="#soluciones">Soluciones</a>
+            <a href="#productos">Productos</a>
+            <a href="#partners">Partners</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ======= HERO BANNER ======= -->
+<section id="hero" class="hero">
+    <div class="hero-overlay" data-aos="zoom-in">
+        <h2>Transformamos tu infraestructura TI</h2>
+        <p>Implementación de redes, modernización de data centers y soluciones de tecnología avanzada</p>
+        <a href="#contacto" class="btn-primary">Contáctanos</a>
+    </div>
+</section>
+
+<!-- ======= SOLUCIONES ======= -->
+<section id="soluciones" class="section">
+    <h2 class="section-title" data-aos="fade-up">Soluciones Empresariales</h2>
+    <div class="grid" data-aos="fade-up" data-aos-delay="150">
+        <div class="card">
+            <img src="images/infraestructura.jpg" alt="Infraestructura TI">
+            <h3>Infraestructura TI</h3>
+            <p>Diseño e implementación de redes corporativas y data centers.</p>
         </div>
-    </header>
-
-    <!-- Hero / Sección inicial -->
-    <section id="hero" class="hero">
-        <div class="hero-overlay">
-            <h2 data-aos="fade-up">Soluciones tecnológicas confiables para tu empresa</h2>
-            <p data-aos="fade-up" data-aos-delay="100">Implementación de redes, infraestructura TI y soporte profesional</p>
-            <a href="#contacto" class="btn-primary" data-aos="fade-up" data-aos-delay="200">Contáctanos</a>
+        <div class="card">
+            <img src="images/hyperconvergencia.jpg" alt="Hiperconvergencia">
+            <h3>Hiperconvergencia</h3>
+            <p>Plataformas unificadas con alta disponibilidad y escalabilidad.</p>
         </div>
-    </section>
-
-    <!-- Productos / Tarjetas -->
-    <section id="productos" class="section">
-        <h2 class="section-title" data-aos="fade-up">Nuestros Productos</h2>
-        <div id="lista-productos" class="grid" data-aos="fade-up" data-aos-delay="100">
-            <div class="card">
-                <img src="images/producto1.jpg" alt="Producto 1">
-                <h3>Router Empresarial</h3>
-                <p>Alta velocidad y seguridad para redes corporativas.</p>
-            </div>
-            <div class="card">
-                <img src="images/producto2.jpg" alt="Producto 2">
-                <h3>Switch Gestionable</h3>
-                <p>Control total de tu infraestructura de red.</p>
-            </div>
-            <div class="card">
-                <img src="images/producto3.jpg" alt="Producto 3">
-                <h3>Punto de Acceso Wi-Fi</h3>
-                <p>Cobertura óptima y conexión estable en toda la oficina.</p>
-            </div>
+        <div class="card">
+            <img src="images/ciberseguridad.jpg" alt="Ciberseguridad">
+            <h3>Ciberseguridad</h3>
+            <p>Protección avanzada para redes, datos y aplicaciones.</p>
         </div>
-    </section>
-
-    <!-- Servicios -->
-    <section id="servicios" class="section bg-light">
-        <h2 class="section-title" data-aos="fade-up">Nuestros Servicios</h2>
-        <div class="grid" data-aos="fade-up" data-aos-delay="100">
-            <div class="card">
-                <h3>Soporte en Infraestructura TI</h3>
-                <p>Mantenimiento y resolución rápida de problemas tecnológicos.</p>
-            </div>
-            <div class="card">
-                <h3>Consultoría Tecnológica</h3>
-                <p>Asesoramiento estratégico para optimizar tus sistemas.</p>
-            </div>
-            <div class="card">
-                <h3>Mantenimiento de Sistemas y Redes</h3>
-                <p>Garantizamos uptime y rendimiento de tu infraestructura.</p>
-            </div>
+        <div class="card">
+            <img src="images/cloud-solutions.jpg" alt="Cloud Solutions">
+            <h3>Cloud & Nube</h3>
+            <p>Implementación de soluciones cloud públicas, privadas e híbridas.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Slider / Casos de éxito -->
-    <section id="casos" class="section">
-        <h2 class="section-title" data-aos="fade-up">Casos de Éxito</h2>
-        <div class="swiper mySwiper" data-aos="fade-up" data-aos-delay="100">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide card">
-                    <img src="images/proyecto1.jpg" alt="Empresa ABC">
-                    <h3>Empresa ABC</h3>
-                    <p>Implementación de red corporativa con monitoreo 24/7.</p>
-                </div>
-                <div class="swiper-slide card">
-                    <img src="images/proyecto2.jpg" alt="Startup XYZ">
-                    <h3>Startup XYZ</h3>
-                    <p>Red Wi-Fi de alta cobertura y soporte técnico continuo.</p>
-                </div>
-            </div>
-            <!-- Botones del slider -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
-    </section>
+<!-- ======= PRODUCTOS ======= -->
+<section id="productos" class="section bg-light">
+    <h2 class="section-title" data-aos="fade-up">Nuestros Productos</h2>
+    <div id="lista-productos" class="grid" data-aos="fade-up" data-aos-delay="150"></div>
+</section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="section bg-light">
-        <h2 class="section-title" data-aos="fade-up">Contacto</h2>
-        <form id="form-contacto" class="form" data-aos="fade-up" data-aos-delay="100">
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Correo" required>
-            <textarea placeholder="Mensaje"></textarea>
-            <button type="submit" class="btn-primary">Enviar</button>
-        </form>
-    </section>
+<!-- ======= PARTNERS ======= -->
+<section id="partners" class="section">
+    <h2 class="section-title" data-aos="fade-up">Nuestros Partners Tecnológicos</h2>
+    <div class="grid partners-grid" data-aos="fade-up" data-aos-delay="150">
+        <img src="images/partner-cisco.png" alt="Cisco">
+        <img src="images/partner-vmware.png" alt="VMware">
+        <img src="images/partner-huawei.png" alt="Huawei">
+        <img src="images/partner-dell.png" alt="Dell">
+        <img src="images/partner-fortinet.png" alt="Fortinet">
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>© 2026 Infra Solutions. Todos los derechos reservados.</p>
-    </footer>
+<!-- ======= CONTACTO ======= -->
+<section id="contacto" class="section bg-light">
+    <h2 class="section-title" data-aos="fade-up">Contacto</h2>
+    <form id="form-contacto" class="form" data-aos="fade-up" data-aos-delay="150">
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Correo" required>
+        <textarea placeholder="Mensaje"></textarea>
+        <button type="submit" class="btn-primary">Enviar</button>
+    </form>
+</section>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="scripts.js"></script>
-    <script>
-        // Inicialización Swiper
-        var swiper = new Swiper(".mySwiper", {
-            loop: true,
-            speed: 800,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
+<!-- ======= FOOTER ======= -->
+<footer class="footer">
+    <p>© 2026 Infra Solutions · Todos los derechos reservados</p>
+</footer>
 
-        // Inicialización AOS
-        AOS.init({
-            duration: 800,
-            once: true,
-        });
-    </script>
+<!-- ======= MODAL PRODUCTO ======= -->
+<div id="modal-producto" class="modal">
+    <div class="modal-content">
+        <span id="modal-close" class="modal-close">&times;</span>
+        <img id="modal-img" src="" alt="">
+        <h3 id="modal-nombre"></h3>
+        <p id="modal-precio"></p>
+        <p id="modal-descripcion"></p>
+    </div>
+</div>
+
+<!-- ======= SCRIPTS ======= -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="js/scripts.js"></script>
+<script>
+    AOS.init({ duration: 900, once: true });
+</script>
+
 </body>
 </html>
