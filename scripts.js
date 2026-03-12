@@ -1,122 +1,49 @@
-// ======================
-// LISTA DE PRODUCTOS
-// ======================
-const productos = [
-    {
-        nombre: "Servidor Virtual",
-        precio: "$200/mes",
-        descripcion: "Servidor virtual de alto rendimiento para tu empresa con soporte 24/7.",
-        imagen: "images/producto1.jpg"
-    },
-    {
-        nombre: "Soporte Remoto",
-        precio: "$50/hora",
-        descripcion: "Asistencia técnica remota rápida y confiable para tus sistemas.",
-        imagen: "images/producto2.jpg"
-    },
-    {
-        nombre: "Mantenimiento de Redes",
-        precio: "$100/mes",
-        descripcion: "Optimización y monitoreo constante de tu infraestructura de red.",
-        imagen: "images/producto3.jpg"
-    }
-];
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background: #f7f9fc; color: #333; }
 
-const listaProductos = document.getElementById('lista-productos');
+/* Header */
+header { background: #002d66; color: white; padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 100; }
+header .container { width: 90%; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+header nav a { color: white; text-decoration: none; margin: 0 18px; transition: color .3s; }
+header nav a:hover { color: #00aeff; }
 
-// Crear tarjetas de productos
-productos.forEach((prod, index) => {
-    const div = document.createElement('div');
-    div.classList.add('card', 'producto-card');
-    div.innerHTML = `
-        <img src="${prod.imagen}" alt="${prod.nombre}">
-        <h3>${prod.nombre}</h3>
-        <p class="precio">${prod.precio}</p>
-        <button class="btn-detalle" data-index="${index}">Ver Detalles</button>
-    `;
-    listaProductos.appendChild(div);
-});
+/* Hero */
+.hero { height: 90vh; background: url('../images/hero-bg.jpg') center/cover no-repeat; display: flex; justify-content: center; align-items: center; text-align: center; }
+.hero-overlay { background: rgba(0, 0, 0, 0.6); padding: 50px; border-radius: 12px; }
+.hero h2 { font-size: 3rem; color: white; margin-bottom: 15px; }
+.hero p { font-size: 1.2rem; color: white; margin-bottom: 25px; }
+.btn-primary { background: #00aeff; color: white; padding: 14px 30px; border-radius: 8px; font-weight: 600; transition: .3s; }
+.btn-primary:hover { background: #008ecc; transform: translateY(-2px); }
 
-// ======================
-// MODAL DE PRODUCTO
-// ======================
-const modal = document.createElement('div');
-modal.id = 'modal-producto';
-modal.classList.add('modal');
-modal.innerHTML = `
-    <div class="modal-content">
-        <span id="modal-close" class="modal-close">&times;</span>
-        <img id="modal-img" src="" alt="">
-        <h3 id="modal-nombre"></h3>
-        <p id="modal-precio"></p>
-        <p id="modal-descripcion"></p>
-    </div>
-`;
-document.body.appendChild(modal);
+/* Sections */
+.section { padding: 100px 20px; width: 90%; max-width: 1200px; margin: auto; }
+.section-title { font-size: 2.5rem; text-align: center; color: #002d66; margin-bottom: 40px; font-weight: bold; }
 
-const modalImg = document.getElementById('modal-img');
-const modalNombre = document.getElementById('modal-nombre');
-const modalPrecio = document.getElementById('modal-precio');
-const modalDescripcion = document.getElementById('modal-descripcion');
-const modalClose = document.getElementById('modal-close');
+/* Grid */
+.grid { display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); justify-items: center; }
 
-listaProductos.addEventListener('click', (e) => {
-    if (e.target.classList.contains('btn-detalle')) {
-        const index = e.target.dataset.index;
-        const producto = productos[index];
-        modalImg.src = producto.imagen;
-        modalNombre.textContent = producto.nombre;
-        modalPrecio.textContent = producto.precio;
-        modalDescripcion.textContent = producto.descripcion;
-        modal.classList.add('modal-show');
-    }
-});
+/* Cards base */
+.card { background: white; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); overflow: hidden; transition: .3s; text-align: center; }
+.card img { width: 100%; height: 180px; object-fit: cover; }
+.card h3 { margin: 15px 0; font-size: 1.4rem; color: #002d66; }
+.card p { margin: 10px 15px; color: #555; font-size: 1rem; }
+.card:hover { transform: translateY(-6px); }
 
-modalClose.addEventListener('click', () => {
-    modal.classList.remove('modal-show');
-});
+/* Partners */
+.partners-grid img { width: 100px; opacity: .7; transition: opacity .3s; }
+.partners-grid img:hover { opacity: 1; }
 
-window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.classList.remove('modal-show');
-    }
-});
+/* Form */
+.form input, .form textarea { width: 100%; padding: 14px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem; margin: 10px 0; }
+.form button { background: #002d66; color: white; padding: 12px 28px; border-radius: 8px; font-weight: bold; transition: .3s; }
+.form button:hover { background: #005bb5; transform: translateY(-2px); }
 
-// ======================
-// FORMULARIO DE CONTACTO
-// ======================
-const form = document.getElementById('form-contacto');
+/* Modal */
+.modal { display: none; position: fixed; width: 100%; height: 100%; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; }
+.modal-show { display: flex; }
+.modal-content { background: white; padding: 30px; border-radius: 10px; text-align: center; }
+.modal-close { position: absolute; top: 15px; right: 20px; font-size: 26px; cursor: pointer; }
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    // Validación básica
-    const nombre = form.querySelector('input[type="text"]').value.trim();
-    const correo = form.querySelector('input[type="email"]').value.trim();
-    const mensaje = form.querySelector('textarea').value.trim();
-
-    if (!nombre || !correo || !mensaje) {
-        showMensaje("Por favor completa todos los campos", "error");
-        return;
-    }
-
-    showMensaje("Gracias por tu mensaje. Nos contactaremos pronto.", "success");
-    form.reset();
-});
-
-// Función para mostrar mensaje
-function showMensaje(text, tipo) {
-    let div = document.createElement('div');
-    div.className = `form-mensaje ${tipo}`;
-    div.textContent = text;
-    form.prepend(div);
-
-    // Animación fade out
-    setTimeout(() => {
-        div.classList.add('fade-out');
-    }, 3000);
-
-    setTimeout(() => {
-        div.remove();
-    }, 4000);
-}
+/* Footer */
+.footer { background: #002d66; color: white; text-align: center; padding: 18px 0; margin-top: 40px; }
