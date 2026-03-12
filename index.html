@@ -5,46 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infra Solutions</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Swiper CSS para slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <!-- AOS para animaciones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
 </head>
 <body>
-    <header>
-        <h1>Infra Solutions</h1>
-        <p>Soluciones tecnológicas confiables para tu empresa</p>
-        <nav>
-            <a href="#productos">Productos</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container flex-between">
+            <h1 class="logo">Infra Solutions</h1>
+            <nav>
+                <a href="#productos">Productos</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
     </header>
 
-    <section id="productos">
-        <h2>Productos</h2>
-        <div id="lista-productos"></div>
+    <!-- Hero / Sección inicial -->
+    <section id="hero" class="hero">
+        <div class="hero-overlay">
+            <h2 data-aos="fade-up">Soluciones tecnológicas confiables para tu empresa</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Implementación de redes, infraestructura TI y soporte profesional</p>
+            <a href="#contacto" class="btn-primary" data-aos="fade-up" data-aos-delay="200">Contáctanos</a>
+        </div>
     </section>
 
-    <section id="servicios">
-        <h2>Servicios</h2>
-        <ul>
-            <li>Soporte en infraestructura TI</li>
-            <li>Consultoría tecnológica</li>
-            <li>Mantenimiento de sistemas y redes</li>
-        </ul>
+    <!-- Productos / Tarjetas -->
+    <section id="productos" class="section">
+        <h2 class="section-title" data-aos="fade-up">Nuestros Productos</h2>
+        <div id="lista-productos" class="grid" data-aos="fade-up" data-aos-delay="100">
+            <div class="card">
+                <img src="images/producto1.jpg" alt="Producto 1">
+                <h3>Router Empresarial</h3>
+                <p>Alta velocidad y seguridad para redes corporativas.</p>
+            </div>
+            <div class="card">
+                <img src="images/producto2.jpg" alt="Producto 2">
+                <h3>Switch Gestionable</h3>
+                <p>Control total de tu infraestructura de red.</p>
+            </div>
+            <div class="card">
+                <img src="images/producto3.jpg" alt="Producto 3">
+                <h3>Punto de Acceso Wi-Fi</h3>
+                <p>Cobertura óptima y conexión estable en toda la oficina.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <form id="form-contacto">
+    <!-- Servicios -->
+    <section id="servicios" class="section bg-light">
+        <h2 class="section-title" data-aos="fade-up">Nuestros Servicios</h2>
+        <div class="grid" data-aos="fade-up" data-aos-delay="100">
+            <div class="card">
+                <h3>Soporte en Infraestructura TI</h3>
+                <p>Mantenimiento y resolución rápida de problemas tecnológicos.</p>
+            </div>
+            <div class="card">
+                <h3>Consultoría Tecnológica</h3>
+                <p>Asesoramiento estratégico para optimizar tus sistemas.</p>
+            </div>
+            <div class="card">
+                <h3>Mantenimiento de Sistemas y Redes</h3>
+                <p>Garantizamos uptime y rendimiento de tu infraestructura.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slider / Casos de éxito -->
+    <section id="casos" class="section">
+        <h2 class="section-title" data-aos="fade-up">Casos de Éxito</h2>
+        <div class="swiper mySwiper" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide card">
+                    <img src="images/proyecto1.jpg" alt="Empresa ABC">
+                    <h3>Empresa ABC</h3>
+                    <p>Implementación de red corporativa con monitoreo 24/7.</p>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="images/proyecto2.jpg" alt="Startup XYZ">
+                    <h3>Startup XYZ</h3>
+                    <p>Red Wi-Fi de alta cobertura y soporte técnico continuo.</p>
+                </div>
+            </div>
+            <!-- Botones del slider -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section bg-light">
+        <h2 class="section-title" data-aos="fade-up">Contacto</h2>
+        <form id="form-contacto" class="form" data-aos="fade-up" data-aos-delay="100">
             <input type="text" placeholder="Nombre" required>
             <input type="email" placeholder="Correo" required>
             <textarea placeholder="Mensaje"></textarea>
-            <button type="submit">Enviar</button>
+            <button type="submit" class="btn-primary">Enviar</button>
         </form>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <p>© 2026 Infra Solutions. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="scripts.js"></script>
+    <script>
+        // Inicialización Swiper
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            speed: 800,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        // Inicialización AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
 </body>
 </html>
